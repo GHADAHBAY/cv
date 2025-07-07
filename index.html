@@ -68,14 +68,18 @@
 
     <!-- JavaScript for theme toggle -->
     <script>
-      const btnMode = document.querySelector('.btn-mode');
-
+  document.addEventListener("DOMContentLoaded", function () {
+    const btnMode = document.querySelector('.btn-mode');
+    if (btnMode) {
       btnMode.onclick = function () {
         const root = document.documentElement; 
         root.classList.toggle("light-mode");
         root.classList.toggle("dark");
       };
-    </script>
+    }
+  });
+</script>
+
 
 </body>
 </html>
