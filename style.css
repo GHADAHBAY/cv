@@ -1,6 +1,196 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  text-align: center;
-  padding: 40px;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+
+
+
+:root.light-mode {
+   --bg: #FAFAFA;              /* خلفية ناعمة */
+  --card-bg: #FFFFFF;         /* كروت واضحة */
+  --text: #2D2D2D;            /* أسود ناعم */
+  --text-muted: #777;         /* رمادي مخفف */
+  --primary: #5271FF;         /* أزرق ناعم عصري */
+  --border: #DDD;  
+}
+
+:root.dark {
+  --bg: #121212;
+  --text: #FFFFFF;
+  --text-muted: #B3B3B3;
+  --primary: #4E6E81;
+  --border: #2C2C2C;
+  --card-bg: #1A1A1A;
+}
+
+.all{
+  background: var(--bg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.all header nav{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.all header nav .logo span{
+   font-family: "Bitcount Grid Double", system-ui, sans-serif;
+  font-size: 7dvh;
+  font-style: normal;
+  font-weight: bold;
+  color: royalblue;
+  letter-spacing: 2px;
+}
+
+.all header nav .nav-links a{
+     font-family: "Bitcount Grid Double", system-ui, sans-serif;
+  color: var(--primary);
+  margin: 0 30px;
+  transition: 0.5s;
+
+}
+
+.all header nav .nav-links a:hover{
+  color: var(--text);
+  text-shadow:  4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.all header nav .btn-mode{
+  color: var(--primary);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+.all .container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  height: calc(100vh - 100px);
+}
+
+.all .container .div-text{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+
+.all .container .div-text h4{
+  color: var(--text-muted);
+  font-size: 25px;
+}
+
+.all .container .div-text h1{
+  color: royalblue;
+  font-size: 60px;
+  margin: 15px 50px 10px;
+   font-family:  system-ui, sans-serif;
+}
+
+.all .container .div-text span{
+  color: var(--text-muted);
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.all .container .div-text p{
+  color: var(--text);
+  margin: 20px 0 40px;
+}
+
+
+.social-icon{
+  position: absolute;
+  top: 50% ;
+  transform: translateY(-50%);
+  right: 30px;
+  display: flex;
+  flex-direction: column ;
+  gap: 40px;
+}
+
+
+.social-icon a{
+  color: var(--text-muted);
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+
+.social-icon a:hover{
+  transform: scale(1.3);
+}
+
+
+@media (max-width: 768px) {
+  .all header nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .all header nav .nav-links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .all header nav .nav-links a {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .all .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .all .container .div-text {
+    position: static;
+    transform: none;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .all .container .div-text h1 {
+    font-size: 35px;
+    margin: 10px 0;
+  }
+
+  .all .container .div-text h4,
+  .all .container .div-text span,
+  .all .container .div-text p {
+    font-size: 18px;
+  }
+
+  .social-icon {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+
+  .social-icon a {
+    font-size: 20px;
+  }
 }
